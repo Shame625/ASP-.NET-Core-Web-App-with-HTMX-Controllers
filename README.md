@@ -14,7 +14,6 @@ This repository demonstrates how to build an interactive web application using *
 1. Clone the repository:
    ```bash
    git clone https://github.com/Shame625/ASP-.NET-Core-Web-App-with-HTMX-Controllers-.git
-   cd aspnetcore-htmx-webapp
    ```
 2. Install the required .NET packages:
    ```bash
