@@ -1,0 +1,9 @@
+﻿@using HTMXTest.Services
+@inject IViewLocatorService _viewLocatorService
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div>
+    @await Html.PartialAsync(_viewLocatorService.FindView("PersonForm"))
+</div>

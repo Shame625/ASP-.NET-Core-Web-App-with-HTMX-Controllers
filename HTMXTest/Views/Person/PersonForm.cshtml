@@ -1,0 +1,50 @@
+﻿@model PersonModel
+
+<div hx-target="this" id="sform">
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["SuccessMessage"]
+        </div>
+
+        <h4>Submitted Information:</h4>
+        <ul>
+            <li><strong>Name:</strong> @Model.Name</li>
+            <li><strong>Last Name:</strong> @Model.LastName</li>
+            <li><strong>Age:</strong> @Model.Age</li>
+            <li><strong>City:</strong> @Model.City</li>
+            <li><strong>Country:</strong> @Model.Country</li>
+        </ul>
+    }
+    else
+    {
+        <form hx-post="/Person/SubmitForm" hx-target="#sform" hx-swap="outerHTML">
+            <div>
+                <label>Name:</label>
+                <input asp-for="Name" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div>
+                <label>Last Name:</label>
+                <input asp-for="LastName" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div>
+                <label>Age:</label>
+                <input asp-for="Age" type="number" />
+                <span asp-validation-for="Age" class="text-danger"></span>
+            </div>
+            <div>
+                <label>City:</label>
+                <input asp-for="City" />
+                <span asp-validation-for="City" class="text-danger"></span>
+            </div>
+            <div>
+                <label>Country:</label>
+                <input asp-for="Country" />
+                <span asp-validation-for="Country" class="text-danger"></span>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    }
+</div>
